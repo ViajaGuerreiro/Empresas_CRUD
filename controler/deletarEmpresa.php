@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once '../model/conexao.php';
 include_once '../model/modelEmpresa.php';
 
@@ -7,10 +7,11 @@ $id_empresa = $_GET['id'];
 
 if ($id_empresa != null) {
     deletarEmpresa($conexao, $id_empresa);
-    echo("Empresa Deletada com Sucesso");
+    $_SESSION['sucessoDel'] = true;
+    header("location: ../view/buscarNomeEmpresa.php");
 }
 else {
-    echo ("Erro de Conexão");
+    header("location: ../view/buscarNomeEmpresa.php");
 }
 
 ?>

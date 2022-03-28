@@ -1,5 +1,5 @@
 <?php
-
+session_start();
     $nome_empresa = $_POST["cxNome"];
     $descricao = $_POST["cxDescricao"];
     $email = $_POST["cxEmail"];
@@ -11,11 +11,13 @@ if ($nome_empresa != "" && $descricao != "" && $email != "" && $fone != "") {
 
     cadastrarEmpresa($conexao, $nome_empresa, $descricao, $fone, $email);
 
-    echo ("Dados Cadastrados com Sucesso");
+    $_SESSION['sucessoCad'] = true;
+
+    header("location: ../index.php");
 } 
 
 else {
-    echo ("erro de conexão");
+    header("location: ../index.php");
 }
 
 ?>

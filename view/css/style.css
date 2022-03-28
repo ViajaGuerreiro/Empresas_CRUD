@@ -33,13 +33,13 @@ nav a:hover {
     color: rgba(0, 255, 255, 0.900);
 }
 
-#main-cadastro {
+main {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-#main-cadastro-form {
+#main-form {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -48,14 +48,14 @@ nav a:hover {
     background-color: rgb(47, 165, 120);
 }
 
-#main-cadastro-form h1 {
+#main-form h1 {
     font-size: 40px;
     font-family: 'Righteous', cursive;
     font-weight: 200;
 }
 
 
-#main-cadastro-form input {
+#main-form input {
     height: 40px;
     width: 480px;
     margin: 1.8rem 0;
@@ -66,11 +66,11 @@ nav a:hover {
     font-weight: 400;
 }
 
-#main-cadastro-form input:focus {
+#main-form input:focus {
     background-color: rgb(215, 250, 220);
 }
 
-#main-cadastro-form button {
+.btn-cadastrar {
     align-items: center;
     width: 110px;
     height: 40px;
@@ -79,27 +79,70 @@ nav a:hover {
     border-radius: 10px;
     font-size: 20px;
     background-color: rgba(10, 207, 207,0.8);
-    
 }
 
-#main-cadastro-form button:hover {
+.btn-cadastrar:hover {
     background-color: rgba(10, 207, 207, 1);
     cursor: pointer;
 }
 
 /*tela de busca*/
 
-#main-busca {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.main-form {
+    margin-top: 5vh;
 }
 
-#main-busca-form {
+#main-form-botoes {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 17px;
-    border-radius: 8px;
-    background-color: rgb(47, 165, 120);
+    justify-content: space-around;
+}
+
+.btn-alterar {
+    width: 110px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: rgba(207, 131, 10, 0.8);
+}
+
+.btn-alterar:hover {
+    cursor: pointer;
+    background-color: rgba(207, 131, 10, 0.924);
+}
+
+.btn-excluir {
+    width: 110px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: rgba(207, 10, 10, 0.65);
+}
+
+.btn-excluir a {
+    color: black;
+}
+
+.btn-excluir:hover {
+    cursor: pointer;
+    background-color: rgba(207, 10, 10, 0.774);
+}
+
+.btn-voltar {
+    width: 110px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: rgba(10, 207, 207,0.8);
+}
+
+.btn-voltar a {
+    color: black;
+}
+
+.btn-voltar:hover {
+    cursor: pointer;
+    background-color: rgba(10, 207, 207, 0.904);
 }

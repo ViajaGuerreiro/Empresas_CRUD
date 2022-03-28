@@ -22,33 +22,34 @@ while ($linha = mysqli_fetch_array($dados)) {
     </head>
 
     <body>
-        <main id="main-busca">
-            <div id="main-busca-form">
+        <main>
+            <div id="main-form" class="main-form">
+                <h1>Dados da Empresa</h1>
                 <form action="alterarDadosEmpresa.php" method="post">
-                    <label for="id_empresa">ID:</label>
                     <input readonly type="text" name="cxCod" id="id_empresa" value="<?= $linha['cod_empresa'] ?>">
                     <br>
 
-                    <label>Nome:</label>
                     <input type="text" name="cxNome" value="<?= $linha['nome_empresa'] ?>">
                     <br>
 
-                    <label>Descrição</label>
                     <input maxlength="200" type="text" name="cxDescricao" value="<?= $linha['descricao'] ?>">
                     <br>
 
-                    <label>Telefone</label>
                     <input maxlength="11" type="text" name="cxFone" value="<?= $linha['telefone'] ?>">
                     <br>
 
-                    <label>Email:</label>
                     <input type="text" name="cxEmail"value="<?= $linha['email'] ?>">
                     <br>
 
-                    <button type="submit">Alterar Dados</button>
+                    <div id="main-form-botoes">
+                        <button class="btn-alterar" type="submit">Alterar</button>
                 </form>
+                        <button class="btn-excluir"><a href="deletarEmpresa.php?id= <?= $linha['cod_empresa'] ?>">Excluir</a></button>
+                        
+                        <button class="btn-voltar"><a href="../view/buscarNomeEmpresa.php">Voltar</a></button>
+                    </div>
             </div>
-            <a href="deletarEmpresa.php?id= <?= $linha['cod_empresa'] ?>">Excluir</a>
+            
         </main>
     </body>
 
@@ -57,5 +58,3 @@ while ($linha = mysqli_fetch_array($dados)) {
 <?php
 }
 ?>
-
-<a href="../view/buscarNomeEmpresa.php">Voltar Busca</a>

@@ -9,6 +9,22 @@
 </head>
 
 <body>
+<?php
+    session_start();
+    if(isset($_SESSION['sucessoAlt'])) {
+?>
+        <script>alert("Dados alterados com Sucesso")</script>
+<?php
+    session_destroy();
+    }
+
+    if(isset($_SESSION['sucessoDel'])) {
+?>
+        <script>alert("Empresa deletada com Sucesso")</script>
+<?php
+    session_destroy();
+    }
+?>
     <nav>
         <a href="../index.php">Index</a>
     </nav>

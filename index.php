@@ -7,6 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
     <link rel="stylesheet" href="view/css/style.css">
+<?php
+    session_start();
+
+    if(isset($_SESSION['sucessoCad'])) {
+?>
+        <script>alert("Empresa cadastrada com Sucesso")</script>
+<?php
+        session_destroy();
+    }
+?>
 </head>
 
 <body>
@@ -14,9 +24,9 @@
         <a href="view/buscarNomeEmpresa.php">Buscar Empresa</a>
     </nav>
 
-    <main id="main-cadastro">
+    <main>
         <form action="controler/inserirEmpresa.php" method="post">
-            <div id="main-cadastro-form">
+            <div id="main-form">
                 <h1>Cadastro Empresa</h1>
 
                 <input required type="text" name="cxNome" placeholder="Nome da Empresa">
@@ -26,8 +36,8 @@
                 <input maxlength="11" required type="tel" name="cxFone" placeholder="Telefone">
 
                 <input required type="email" name="cxEmail" placeholder="E-mail">
-
-                <button type="submit">Cadastrar</button>
+                
+                <button class="btn-cadastrar" type="submit">Cadastrar</button>
             </div>
         </form>
 
