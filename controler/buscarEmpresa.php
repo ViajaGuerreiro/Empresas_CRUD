@@ -7,7 +7,9 @@ $nome_empresa = $_GET["cxNomeE"];
 
 $dados = buscarEmpresaNome($conexao, $nome_empresa);
 
-if (isset($dados)) {
+$linha = mysqli_fetch_assoc($dados);
+
+if ($linha['cod_empresa'] == null) {
     
     echo "
         <script>
@@ -18,7 +20,6 @@ if (isset($dados)) {
     ";
 }
 
-while ($linha = mysqli_fetch_array($dados)) {
 ?>
 
     <!DOCTYPE html>
@@ -65,7 +66,3 @@ while ($linha = mysqli_fetch_array($dados)) {
     </body>
 
     </html>
-
-<?php
-}
-?>

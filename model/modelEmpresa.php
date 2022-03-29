@@ -14,11 +14,7 @@ function buscarEmpresaNome($conexao, $nome_empresa)
 
     $executar = mysqli_query($conexao, $sql);
 
-    if($executar != null ) {
-        return $executar;
-    } else {
-        return null;
-    }
+    return $executar;
 }
 
 function buscarTodasEmpresas($conexao)
@@ -27,11 +23,7 @@ function buscarTodasEmpresas($conexao)
 
     $executar = mysqli_query($conexao, $sql);
 
-    if($executar != null) {
-        return $executar;
-    } else {
-        return null;
-    }
+    return $executar;
 }
 
 function alterarDadosEmpresa($conexao, $nome_empresa, $descricao, $fone, $email, $id_empresa) {
