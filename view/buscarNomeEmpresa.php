@@ -6,39 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar Empresa</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-<?php
-    session_start();
-    if(isset($_SESSION['sucessoAlt'])) {
-?>
-        <script>alert("Dados alterados com Sucesso")</script>
-<?php
-    session_destroy();
-    }
-
-    if(isset($_SESSION['sucessoDel'])) {
-?>
-        <script>alert("Empresa deletada com Sucesso")</script>
-<?php
-    session_destroy();
-    }
-?>
     <nav>
         <a href="../index.php">Index</a>
     </nav>
-    <form action="../controler/buscarEmpresa.php" method="GET">
 
-        <span>Digite o nome da empresa:</span>
-        <input required type="text" size="50" name="cxNomeE">
-        <button type="submit">Pesquisar</button>
+    <main>
+        <div id="main-form">
+            <form action="../controler/buscarEmpresa.php" method="GET">
 
-    </form>
-    <br>
-    <form action="../controler/buscarTodasEmpresas.php" method="post">
-        <button>Pesquisar todas</button>
-    </form>
+                <h1>Digite o nome da empresa</h1>
+                <input required type="text" name="cxNomeE">
+
+                <div id="main-form-botoes">
+                    <button class="btn-excluir" type="submit">Pesquisar</button>
+            </form>
+            <form action="../controler/buscarTodasEmpresas.php" method="post">
+                    <button class="btn-alterar" type="submit">Pesquisar todas</button>
+
+                </div>
+            </form>
+        </div>
+    </main>
+
 </body>
 
 </html>

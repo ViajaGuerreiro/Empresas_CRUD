@@ -1,5 +1,4 @@
 <?php
-session_start();
     $nome_empresa = $_POST["cxNome"];
     $descricao = $_POST["cxDescricao"];
     $email = $_POST["cxEmail"];
@@ -11,9 +10,13 @@ if ($nome_empresa != "" && $descricao != "" && $email != "" && $fone != "") {
 
     cadastrarEmpresa($conexao, $nome_empresa, $descricao, $fone, $email);
 
-    $_SESSION['sucessoCad'] = true;
+    echo "
+        <script>
+            alert('Empresa cadastrada com Sucesso');
 
-    header("location: ../index.php");
+            window.location.href = '../index.php';
+        </script>
+    ";
 } 
 
 else {
@@ -21,6 +24,3 @@ else {
 }
 
 ?>
-
-<br>
-<a href="../index.php">Index</a>

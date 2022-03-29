@@ -7,16 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
     <link rel="stylesheet" href="view/css/style.css">
-<?php
-    session_start();
-
-    if(isset($_SESSION['sucessoCad'])) {
-?>
-        <script>alert("Empresa cadastrada com Sucesso")</script>
-<?php
-        session_destroy();
-    }
-?>
 </head>
 
 <body>

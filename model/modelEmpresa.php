@@ -27,7 +27,7 @@ function buscarTodasEmpresas($conexao)
 
     $executar = mysqli_query($conexao, $sql);
 
-    if($executar != null ) {
+    if($executar != null) {
         return $executar;
     } else {
         return null;

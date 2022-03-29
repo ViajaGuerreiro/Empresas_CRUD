@@ -6,6 +6,17 @@ include_once '../model/modelEmpresa.php';
 
 $dados = buscarTodasEmpresas($conexao);
 
+if (isset($dados)) {
+    
+    echo "
+        <script>
+            alert('Empresa não encontrada')
+
+            window.location.href = '../view/buscarNomeEmpresa.php'
+        </script>
+    ";
+}
+
 while ($linha = mysqli_fetch_array($dados)) {
 ?>
 
@@ -37,18 +48,18 @@ while ($linha = mysqli_fetch_array($dados)) {
                     <input maxlength="11" type="text" name="cxFone" value="<?= $linha['telefone'] ?>">
                     <br>
 
-                    <input type="text" name="cxEmail"value="<?= $linha['email'] ?>">
+                    <input type="text" name="cxEmail" value="<?= $linha['email'] ?>">
                     <br>
 
                     <div id="main-form-botoes">
                         <button class="btn-alterar" type="submit">Alterar</button>
                 </form>
-                        <button class="btn-excluir"><a href="deletarEmpresa.php?id= <?= $linha['cod_empresa'] ?>">Excluir</a></button>
-                        
-                        <button class="btn-voltar"><a href="../view/buscarNomeEmpresa.php">Voltar</a></button>
-                    </div>
+                <button class="btn-excluir"><a href="deletarEmpresa.php?id= <?= $linha['cod_empresa'] ?>">Excluir</a></button>
+
+                <button class="btn-voltar"><a href="../view/buscarNomeEmpresa.php">Voltar</a></button>
             </div>
-            
+            </div>
+
         </main>
     </body>
 

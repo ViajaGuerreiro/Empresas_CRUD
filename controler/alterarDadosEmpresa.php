@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $cod_empresa = $_POST['cxCod'];
 
     $nome_empresa = $_POST["cxNome"];
@@ -12,9 +11,16 @@ if ($nome_empresa != "" && $descricao != "" && $email != "" && $fone != "") {
     include_once '../model/modelEmpresa.php';
 
     alterarDadosEmpresa($conexao, $nome_empresa, $descricao, $fone, $email, $cod_empresa);
-    $_SESSION['sucessoAlt'] = true;
+    echo "
+        <script>
 
-    header("location: ../view/buscarNomeEmpresa.php");
+            alert('dados alterados com sucesso');
+
+            window.location.href = '../view/buscarNomeEmpresa.php';
+
+        </script>
+    
+    ";
 } 
 
 else {
@@ -24,4 +30,3 @@ else {
 ?>
 
 <br>
-<a href="../index.php">Index</a>

@@ -86,7 +86,7 @@ main {
     cursor: pointer;
 }
 
-/*tela de busca*/
+/*tela de busca com dados*/
 
 .main-form {
     margin-top: 5vh;
@@ -146,3 +146,5 @@ main {
     cursor: pointer;
     background-color: rgba(10, 207, 207, 0.904);
 }
+
+/*tela de busca*/

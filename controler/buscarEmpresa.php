@@ -7,6 +7,17 @@ $nome_empresa = $_GET["cxNomeE"];
 
 $dados = buscarEmpresaNome($conexao, $nome_empresa);
 
+if (isset($dados)) {
+    
+    echo "
+        <script>
+            alert('Empresa não encontrada')
+
+            window.location.href = '../view/buscarNomeEmpresa.php'
+        </script>
+    ";
+}
+
 while ($linha = mysqli_fetch_array($dados)) {
 ?>
 
