@@ -1,0 +1,24 @@
+Execução do Empresas_CRUD
+
+1. Inicie o servidor XAMP ou WAMP e o MySql 
+
+2. Execute o script que esta na pasta 'database' para criar o banco de dados
+
+3. Certifique-se que o arquivo esta na pasata do servidor htdocs(XAMP) / www(WAMP)
+
+4. Configurações de Conexão
+	4.1. Vá para a pasta 'model/conexao.php'
+	4.2. Modifique as variaveis '$server' para o IP de seu servidor, '$user' para seu usuario do Banco de dados e '$password' senha do seu Banco de Dados
+
+5. Vá para seu navegador e digite na URL 'http://localhost/Empresas_CRUD'
+
+6. Cadastre a empresa com os dados
+
+7. Clique em 'Buscar Empresa' para pesquisar os dados
+
+8. Digite o nome da empresa cadastrada e clique em 'pesquisar' ou em 'pesquisar todas' para todas as empresas  
+
+9. Clique em 'Alterar' caso queira alterar os dados da empresa, 'Excluir' para deletar ou 'Voltar' para retornar a pagina anterior
+
+10. Caso queira retornar a tela inicial clique em 'Index'
+ 
